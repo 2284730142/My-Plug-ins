@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul {
+            list-style: none;
+            height: 50px;
+        }
+
+        li {
+            float: left;
+            margin-left: 25px;
+        }
+
+        .header {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <ul>
+        <li><a href="#|index">go to index</a></li>
+        <li><a href="#|search/SB/shi/ni">go to search</a></li>
+    </ul>
+</div>
+<script src="jquery.js"></script>
+<script src="route.js"></script>
+<script>
+    window.onload = function () {
+
+        var router = new Router();
+
+        console.log(router);
+
+        var container = document.querySelector('.container');
+        router.add('index', function () {
+            alert('current page: index');
+        });
+
+        router.add('search', function (wd, sortType, sortBy) {
+            alert('current page: search' + '\nwd: ' + wd + '\nsortType: ' + sortType + '\nsortBy: ' + sortBy);
+        });
+
+    };
+</script>
+</body>
+</html>
