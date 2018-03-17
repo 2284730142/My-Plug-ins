@@ -1,0 +1,29 @@
+.head {
+    width: 100%;
+    height: auto;
+}
+
+ul {
+    display: block;
+    width: 100%;
+    height: 40px;
+    list-style: none;
+}
+
+li {
+    display: block;
+    text-align: center;
+    margin-left: 20px;
+    line-height: 40px;
+    float: left;
+}
+
+li:last-child::after {
+    content: "";
+    clear: both;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+}
