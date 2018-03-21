@@ -148,9 +148,12 @@
                     console.log('正在读取网页' + htmlUrl);
                 },
                 success: function (response) {
-                    box.innerHTML = response;
+                    $(box).html(response);
+                },
+                complete: function () {
                     loadScript(jsUrl);
                     loadStyles(cssUrl);
+                    console.log('加载网页' + htmlUrl + '结束');
                 },
                 error: function (msg) {
                     console.log(msg);
@@ -162,9 +165,6 @@
     };
 
     _global = (function () {
-        // (0, eval)('this'):执行完以后是eval
-        // 正常情况(非IE)下，可以直接使用eval()，但是在部分低版本的ie中，不可以直接运行eval，所以可以使用 (0,eval)
-        // 间接调用计算出来的是一个值，而不是引用
         return this || (0, eval)('this');
     }());
 
