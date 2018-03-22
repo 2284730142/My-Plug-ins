@@ -146,6 +146,7 @@
                 url: htmlUrl,
                 beforeSend: function () {
                     console.log('正在读取网页' + htmlUrl);
+                    $(box).html('<div>正在加载页面...</div>');
                 },
                 success: function (response) {
                     $(box).html(response);
